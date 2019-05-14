@@ -1,5 +1,6 @@
 import { createStackNavigator, createAppContainer } from 'react-navigation';
 import Login from '~/pages/Login';
+import Profile from '~/pages/Profile';
 
 const Routes = createStackNavigator({
   Login: {
@@ -8,6 +9,14 @@ const Routes = createStackNavigator({
       header: null,
     },
   },
+  Profile: {
+    screen: Profile,
+    navigationOptions: {
+      header: null,
+    },
+  },
+}, {
+  initialRouteName: 'Profile',
 });
 
 export default createAppContainer(Routes);
