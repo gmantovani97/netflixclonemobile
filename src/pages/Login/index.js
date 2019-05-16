@@ -6,7 +6,7 @@ import { colors } from '~/styles';
 import netflixlogo from '~/resources/images/logos/netflixlogo.png';
 import styles from './styles';
 
-function Login() {
+function Login({ navigation }) {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [isPasswordVisible, setPasswordVisible] = useState(false);
@@ -77,7 +77,7 @@ function Login() {
           </View>
           <TouchableOpacity
             activeOpacity={0.8}
-            onPress={() => {}}
+            onPress={() => navigation.navigate('Profile')}
             style={[
               styles.button,
               { borderColor: colors.regular },
@@ -88,10 +88,7 @@ function Login() {
           </TouchableOpacity>
           <TouchableOpacity activeOpacity={0.8} onPress={() => {}}>
             <Text
-              style={[
-                styles.recoverPassword,
-                !!email && !!password && { color: colors.white },
-              ]}
+              style={[styles.recoverPassword, !!email && !!password && { color: colors.white }]}
             >
               Recuperar senha
             </Text>
